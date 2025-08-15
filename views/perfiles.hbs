@@ -1,0 +1,25 @@
+{{!< layout}}
+
+<h1 class="mb-4">Perfiles</h1>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  {{#each perfiles}}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{email}}</p>
+
+          <div class="d-flex justify-content-between mt-3">
+            <a href="/editar/{{id}}" class="btn btn-outline-primary btn-sm">Modificar</a>
+             <form action="/perfil/{{id}}?_method=DELETE" method="POST" class="d-inline">
+              <button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+

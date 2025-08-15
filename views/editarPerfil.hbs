@@ -1,0 +1,30 @@
+<form action="/actualizarPerfil" method="POST" class="p-4 border rounded shadow-sm bg-light">
+  <h4 class="mb-4">Editar perfil</h4>
+   <div class="mb-3">
+    <label for="id" class="form-label">id</label>
+    <input type="text" class="form-control" id="id" name="id" value="{{data.id}}" readonly>
+  </div>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre completo</label>
+    <input type="text" class="form-control" id="name" name="name" value="{{data.name}}" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="documento" class="form-label">Documento</label>
+    <input type="text" class="form-control" id="documento" name="documento" value="{{data.documento}}" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="fnac" class="form-label">Fecha de nacimiento</label>
+    <input type="date" class="form-control" id="fnac" name="fnac" value="{{data.fnac}}" required>
+  </div>
+  
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo electrónico</label>
+    <input type="email" class="form-control" id="email" name="email" value="{{data.email}}" required>
+  </div>
+
+  <button type="submit" class="btn btn-success">Guardar cambios</button>
+  <a href="/" class="btn btn-secondary ms-2">Cancelar</a>
+</form>

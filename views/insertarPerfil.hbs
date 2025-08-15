@@ -1,0 +1,67 @@
+{{!< layout}}
+
+<h1 class="mb-4">Insertar Perfil</h1>
+
+<form action="/perfiles" method="POST" class="needs-validation" novalidate>
+  <div class="mb-3">
+    <label for="documento" class="form-label">Documento</label>
+    <input type="text" class="form-control" id="documento" name="documento" required>
+    <div class="invalid-feedback">
+      Ingresá el número de documento.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+    <div class="invalid-feedback">
+      Ingresá el nombre completo.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+    <div class="invalid-feedback">
+      Ingresá el E-mail.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="fnac" class="form-label">Fecha de Nacimiento</label>
+    <input type="date" class="form-control" id="fnac" name="fnac" required>
+    <div class="invalid-feedback">
+      Seleccioná una fecha válida.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="especialidad" class="form-label">Especialidad</label>
+    <select class="form-select" id="especialidad" name="especialidad" required>
+      <option value="">Seleccionar...</option>
+      <option value="Conductor">Conductor</option>
+      <option value="Oficial">Oficial</option>
+      <option value="Otros">Otros</option>
+    </select>
+    <div class="invalid-feedback">
+      Seleccioná una especialidad.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-success">Guardar Perfil</button>
+</form>
+
+<script>
+  (() => {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>
