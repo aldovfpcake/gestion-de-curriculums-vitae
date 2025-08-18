@@ -25,7 +25,7 @@ router.post('/actualizarPerfil/', actualizarPerfil);
 
 
 // Eliminar perfil
-router.delete('/:id', eliminarPerfil);
+router.post('/eliminar/:id', eliminarPerfil);
 
 
 export default router;
