@@ -106,3 +106,13 @@ export const mostrarFormularioEdicion = (req, res) => {
   if (!perfil) return res.status(404).send('Perfil no encontrado xxxx');
   
 };
+
+export const mostrarformulariocontacto=(req,res) => {
+    res.render('contacto',{ title: "Contacto"});
+}
+
+export const enviarFormularioContacto = (req, res) => {
+  const { nombre, email, mensaje } = req.body;
+  console.log('Datos del formulario de contacto:', { nombre, email, mensaje }); 
+  res.send('Formulario de contacto enviado correctamente');
+} 
