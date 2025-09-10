@@ -8,19 +8,23 @@ import {
   mostrarFormularioEdicion,
   actualizarPerfil,
   mostrarformulariocontacto,
-  enviarFormularioContacto
-
-} from '../controllers/perfilesController.js';
+  enviarFormularioContacto,
+  listaPerfilesPorEdad
+  } from '../controllers/perfilesController.js';
 
 const router = Router();
 
 router.get('/perfiles', obtenerPerfiles);
 router.get('/perfiles/:id', obtenerPerfilPorId);
-router.post('/perfiles', crearPerfil);
+router.post('/crearPerfil', crearPerfil);
 router.delete('/perfiles/:id', eliminarPerfil);
 router.get('/insertar',mostrarFormularioCrear );
 router.get('/editar/:id', obtenerPerfilPorId);
-router.get('/contacto',mostrarformulariocontacto)
+router.get('/contacto',mostrarformulariocontacto);
+router.get('/perfilesEdad',listaPerfilesPorEdad);
+router.get('/',mostrarFormularioCrear );
+
+
 
 // Procesar edición
 router.post('/actualizarPerfil/:id', actualizarPerfil);

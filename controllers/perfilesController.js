@@ -1,3 +1,4 @@
+import e from 'express';
 import supabase from '../bd/bd.js';
 
 export const obtenerPerfiles = async (req, res) => {
@@ -54,8 +55,7 @@ const { documento, name, fnac, especialidad,email } = req.body || {};
     console.error(error);
     return res.status(500).json({ error: 'Error al crear perfil' });
   }
-
-  res.status(201).json(data);
+ res.redirect('/Perfiles');
 };
 
 export const mostrarFormularioCrear = (req, res) => {
@@ -116,3 +116,15 @@ export const enviarFormularioContacto = (req, res) => {
   console.log('Datos del formulario de contacto:', { nombre, email, mensaje }); 
   res.send('Formulario de contacto enviado correctamente');
 } 
+
+//           listaPerfilesPorEdad
+export const listaPerfilesPorEdad = async (req, res) => {
+  const { data, error } = await supabase
+    .from('usuarios_con_edad')
+    .select('*');
+  if (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Error al consultar perfiles' });
+  }
+res.render('listaporEdad', { perfiles: data });  
+}

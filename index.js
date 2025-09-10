@@ -57,9 +57,10 @@ app.use(perfilesRouter);
 //  }
 //});
 
-app.get('/', (req, res) => {
-  res.send('¡Hola, mundo!');
-});
+//app.get('/', (req, res) => {
+//  res.send('¡Hola, mundo!');
+//});
+
 
 app.listen(PORT, () => {
   console.log("Servidor escuchando");
