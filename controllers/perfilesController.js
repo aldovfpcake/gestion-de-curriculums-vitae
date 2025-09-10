@@ -59,7 +59,7 @@ const { documento, name, fnac, especialidad,email } = req.body || {};
 };
 
 export const mostrarFormularioCrear = (req, res) => {
-  res.render('InsertarPerfil', {
+  res.render('nuevoPerfil', {
     title: 'Crear Perfil'
   });
 };
